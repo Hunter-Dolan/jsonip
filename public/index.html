@@ -1,0 +1,100 @@
+<html>
+<head>
+<title>Json IP</title>
+<style>
+body {
+background: #d9e9ff url('bg.png');
+font-size: 14px;
+}
+#container {
+font-family: Arial;
+position:absolute;
+left:50%;
+margin-left:-370px;
+width:700px;
+}
+#body {
+background-color:#FFFFFF;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+padding:20px;
+}
+a {
+color: #02354a;
+text-shadow: 0px -1px #FFF;
+text-decoration:none;
+}
+a:hover {
+border-bottom: 1px #333 dotted;
+}
+#jquery, #http, #write {
+display:none;
+padding-top:10px;
+}
+#donate {
+color:green; 
+}
+#donate:hover {
+border-bottom: 1px green dotted;
+}
+</style>
+<script src="jquery.js"></script>
+<script>
+var w = "0";
+</script>
+</head>
+<body>
+
+<div id="container"><div id="body"><center><h1>Json IP</h1><p>Because JS needs a way to find the users IP address!</p>
+<br>
+Examples: <a href="#" onclick="page(w, '1')">jQuery</a> | <a href="#" onclick="page(w, '2')">Raw HTTP</a> | <a href="#" onclick="page(w, '3')">Write One</a></center>
+
+<div id="jquery"><script src="https://gist.github.com/770469.js"></script></div>
+<div id="http"><script src="https://gist.github.com/770474.js"> </script></div>
+<div id="write"><script type="text/javascript">var host = (("https:" == document.location.protocol) ? "https://secure." : "http://");document.write(unescape("%3Cscript src='" + host + "wufoo.com/scripts/embed/form.js' type='text/javascript'%3E%3C/script%3E"));</script>
+
+<script type="text/javascript">
+var m7x3p9 = new WufooForm();
+m7x3p9.initialize({
+'userName':'hunterhdolan', 
+'formHash':'m7x3p9', 
+'autoResize':true,
+'height':'554'});
+m7x3p9.display();
+</script></div>
+</div><p><center><a href="http://github.com/Hunter-Dolan/jsonip"><b><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=APNLT5A23UT5N" id="donate">Donate</a></b> | Grab the Github Source (Ruby)</a> | <a href="http://hdcomputers.us/">Dreamed up by Hunter Dolan &rarr;</a><br><br><a href="http://www.gnu.org/licenses/gpl.html" style="color:#3465a4">Everything here is GPL!</a></center></p></div>
+
+
+<script>
+function resolve(w) {
+switch(w)
+{
+case "1":
+  var w = "#jquery";
+  break;
+case "2":
+  var w = "#http";
+  break;
+case "3":
+  var w = "#write";
+  break;
+ }
+return w;
+}
+function page(w, p) {
+if (w == p) {} else {
+if (w > 0) {
+jQuery.fx.off = true;
+var rp = resolve(w);
+jQuery.fx.off = false;
+$(rp).hide();
+}
+var rp = resolve(p);
+$(rp).fadeIn('fast', function() {});
+window.w = p;
+}
+}
+</script>
+</body>
+</html>
